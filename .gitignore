@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/RabbitMqShardingDemo/bin/Debug/net6.0
+/.vs/RabbitMqShardingDemo
+/RabbitMqShardingDemo/obj
+/ShardConsumer/bin/Debug/net6.0
+/ShardConsumer/obj
+/ShardShare/bin/Debug/net6.0
+/ShardShare/obj
