@@ -9,3 +9,10 @@
 /ShardConsumer/obj
 /ShardShare/bin/Debug/net6.0
 /ShardShare/obj
+/.vs/ProjectEvaluation
+/Sharding/ShardConsumer/bin/Debug/net6.0
+/Sharding/ShardConsumer/obj
+/Sharding/ShardingProducer/bin/Debug/net6.0
+/Sharding/ShardingProducer/obj
+/Sharding/ShardShare/bin/Debug/net6.0
+/Sharding/ShardShare/obj

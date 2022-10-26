@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqShardingDemo", "RabbitMqShardingDemo\RabbitMqShardingDemo.csproj", "{80AF3B1F-E596-4156-9735-2077132C302A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sharding", "Sharding", "{7032698E-C64B-409B-9D40-E49D6DE8532F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShardConsumer", "ShardConsumer\ShardConsumer.csproj", "{21A02497-A70D-448D-975C-A4A9F192C54E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShardConsumer", "Sharding\ShardConsumer\ShardConsumer.csproj", "{D8DC13C6-8C83-435A-8745-A0C1E4F132E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShardShare", "ShardShare\ShardShare.csproj", "{3882E803-0411-4C09-B916-0D3D5EC874BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShardingProducer", "Sharding\ShardingProducer\ShardingProducer.csproj", "{31FFCE2A-F72B-4740-80FC-7532A2F7C604}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShardShare", "Sharding\ShardShare\ShardShare.csproj", "{34D97218-E972-46EE-93E1-55EF977DCA20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,21 +17,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{80AF3B1F-E596-4156-9735-2077132C302A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80AF3B1F-E596-4156-9735-2077132C302A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80AF3B1F-E596-4156-9735-2077132C302A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80AF3B1F-E596-4156-9735-2077132C302A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21A02497-A70D-448D-975C-A4A9F192C54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21A02497-A70D-448D-975C-A4A9F192C54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21A02497-A70D-448D-975C-A4A9F192C54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21A02497-A70D-448D-975C-A4A9F192C54E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3882E803-0411-4C09-B916-0D3D5EC874BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3882E803-0411-4C09-B916-0D3D5EC874BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3882E803-0411-4C09-B916-0D3D5EC874BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3882E803-0411-4C09-B916-0D3D5EC874BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8DC13C6-8C83-435A-8745-A0C1E4F132E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8DC13C6-8C83-435A-8745-A0C1E4F132E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8DC13C6-8C83-435A-8745-A0C1E4F132E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8DC13C6-8C83-435A-8745-A0C1E4F132E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31FFCE2A-F72B-4740-80FC-7532A2F7C604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FFCE2A-F72B-4740-80FC-7532A2F7C604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FFCE2A-F72B-4740-80FC-7532A2F7C604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FFCE2A-F72B-4740-80FC-7532A2F7C604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D97218-E972-46EE-93E1-55EF977DCA20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D97218-E972-46EE-93E1-55EF977DCA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D97218-E972-46EE-93E1-55EF977DCA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D97218-E972-46EE-93E1-55EF977DCA20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8DC13C6-8C83-435A-8745-A0C1E4F132E5} = {7032698E-C64B-409B-9D40-E49D6DE8532F}
+		{31FFCE2A-F72B-4740-80FC-7532A2F7C604} = {7032698E-C64B-409B-9D40-E49D6DE8532F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C85B92E1-333E-4915-8889-2500D6CD7E54}
