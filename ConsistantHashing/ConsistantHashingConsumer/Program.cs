@@ -4,7 +4,7 @@ using ShardShare;
 using System.Text;
 using System.Text.Json;
 
-namespace ShardConsumer
+namespace ConsistantHashingConsumer
 {
     internal class Program
     {
@@ -35,11 +35,18 @@ namespace ShardConsumer
                 connection = factory.CreateConnection();
                 channel = connection.CreateModel();
 
+                // make sure exchange existed
+                channel.ExchangeDeclare(exchange: AppConst.ConsistantHashingDemo.ExchangeName, "x-consistent-hash", true);
+
+                // create and bind queue to exchange
+                var queue = channel.QueueDeclare($"cons-hash-queue-{key}", true, false, false, null);
+                channel.QueueBind(queue.QueueName, AppConst.ConsistantHashingDemo.ExchangeName, "999");
+
                 channel.BasicQos(0, 1, false);
                 connection.ConnectionShutdown += RabbitMQ_ConnectionShutdown;
 
                 var consumer = new EventingBasicConsumer(channel);
-                
+
                 consumer.Received += async (ch, ea) =>
                 {
                     // received message  
@@ -52,7 +59,7 @@ namespace ShardConsumer
                         Thread.Sleep(1000);
                     }
 
-                    channel.BasicAck(ea.DeliveryTag, false);                    
+                    channel.BasicAck(ea.DeliveryTag, false);
                 };
 
                 consumer.Shutdown += OnConsumerShutdown;
@@ -60,10 +67,7 @@ namespace ShardConsumer
                 consumer.Unregistered += OnConsumerUnregistered;
                 consumer.ConsumerCancelled += OnConsumerConsumerCancelled;
 
-                // there are 2 ways to comsume 'shard' queue
-                //channel.BasicConsume("shard.images", false, consumer); // this way rabbitmq will auto assign consumer to queue
-                //or specializing explicit queue name
-                channel.BasicConsume(key, false, consumer); // .\ShardConsumer.exe "sharding: shard.images - rabbit@JINPC - 0"
+                channel.BasicConsume(queue.QueueName, false, consumer);
             }
             catch (Exception ex)
             {

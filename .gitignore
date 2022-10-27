@@ -16,3 +16,7 @@
 /Sharding/ShardingProducer/obj
 /Sharding/ShardShare/bin/Debug/net6.0
 /Sharding/ShardShare/obj
+/ConsistantHashing/ConsistantHashingConsumer/obj
+/ConsistantHashing/ConsistantHashingConsumer/bin/Debug/net6.0
+/ConsistantHashing/ConsistantHashingProducer/bin/Debug/net6.0
+/ConsistantHashing/ConsistantHashingProducer/obj

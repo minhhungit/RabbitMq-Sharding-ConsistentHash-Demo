@@ -1,12 +1,12 @@
-﻿using RabbitMQ.Client;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text;
+using RabbitMQ.Client;
 using ShardShare;
 
-namespace RabbitMqShardingDemo
+namespace ConsistantHashingProducer
 {
-    // https://github.com/rabbitmq/rabbitmq-server/tree/main/deps/rabbitmq_sharding
-    // .\rabbitmqctl set_policy images-shard "^shard.images$" '{\"shards-per-node\": 4, \"routing-key\": \"r1234\"}'
+    // https://github.com/rabbitmq/rabbitmq-server/tree/main/deps/rabbitmq_consistent_hash_exchange
+    // .\rabbitmq-plugins enable rabbitmq_consistent_hash_exchange
 
     internal class Program
     {
@@ -29,13 +29,13 @@ namespace RabbitMqShardingDemo
                 channel = connection.CreateModel();
 
                 // create exchange
-                channel.ExchangeDeclare(exchange: AppConst.ShardDemo.ExchangeName, "x-modulus-hash", true);
+                channel.ExchangeDeclare(exchange: AppConst.ConsistantHashingDemo.ExchangeName, "x-consistent-hash", true);
 
                 for (int i = 0; i < 10; i++)
-                {                    
+                {
                     var msg = new MyMessage
                     {
-                        CompanyId = new Random().Next(1, 10),   // 1=> 9
+                        CompanyId = new Random().Next(1, 10), // 1=> 9
                         OrderNumber = $"{i}"
                     };
 
@@ -43,9 +43,9 @@ namespace RabbitMqShardingDemo
                     var body = Encoding.UTF8.GetBytes(json);
 
                     var routeKeyToHash = msg.CompanyId.ToString();
-                    channel.BasicPublish(AppConst.ShardDemo.ExchangeName, routeKeyToHash, false, null, body);
+                    channel.BasicPublish(AppConst.ConsistantHashingDemo.ExchangeName, routeKeyToHash, false, null, body);
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -54,6 +54,6 @@ namespace RabbitMqShardingDemo
             }
 
             Console.WriteLine("Hello, World!");
-        }        
+        }
     }
 }

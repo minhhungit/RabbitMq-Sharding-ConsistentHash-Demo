@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShardShare\ShardShare.csproj" />
+    <ProjectReference Include="..\ShardConsumer\ShardConsumer.csproj" />
   </ItemGroup>
 
 </Project>
