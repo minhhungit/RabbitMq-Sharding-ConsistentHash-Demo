@@ -1,4 +1,9 @@
-# Consistent hashing
+## 📖 Table of Contents
+- [Consistent hashing](#consistent-hashing)
+- [Sharding](#sharding)
+ 
+
+## Consistent hashing
 Refer: https://github.com/rabbitmq/rabbitmq-server/tree/main/deps/rabbitmq_consistent_hash_exchange
 
 Install plugin:
@@ -28,7 +33,7 @@ $ .\ConsistentHashingConsumer 4
 ```
 
 
-# Sharding
+## Sharding
 Refer: https://github.com/rabbitmq/rabbitmq-server/tree/main/deps/rabbitmq_sharding
 
 Install plugin:
