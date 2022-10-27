@@ -16,7 +16,7 @@ Then publish 10 messages, queue A hold messages of company ID 1,2,4,5,9, queue B
 Restart rabbitmq
 Publish more new 10 messages, then company can be assigned to difference queue 
 
-=> Quite dangerous, consider to use "sharding" if need order guarantee
+=> **Quite dangerous, consider to use "sharding" if need order guarantee**
 
 ### How to run consumer
 
@@ -44,8 +44,9 @@ Then config policy
 This will auto create 4 queue for us (on a node), we don't need to create queue by manual
 Routing key is used to bind queues to exchange, can be any text
 
-
-There are 2 ways to comsume 'shard' queue, either using "exchange name"
+### Consume
+There are 2 ways to consume 'shard' queue: (maybe more I don't know)
+- Either using "exchange name"
 ```
 channel.BasicConsume("shard.images", false, consumer); // this way rabbitmq will auto assign consumer to queue
 ```
@@ -53,7 +54,7 @@ channel.BasicConsume("shard.images", false, consumer); // this way rabbitmq will
 Note: using exchange name, rabbitmq will auto assign consumer to queue, so becareful don't run too much consumer (1 queue should have only 1 consumer)
 
 
-Or specializing explicit queue name (as parameter), I highly recommend this way:
+- Or specializing explicit queue name (as parameter): (**I highly recommend this way**)
 
 ```
 channel.BasicConsume(key, false, consumer); // .\ShardConsumer.exe "sharding: shard.images - rabbit@JINPC - 0"
