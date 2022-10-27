@@ -4,7 +4,7 @@ using ShardShare;
 using System.Text;
 using System.Text.Json;
 
-namespace ConsistantHashingConsumer
+namespace ConsistentHashingConsumer
 {
     internal class Program
     {
@@ -36,11 +36,11 @@ namespace ConsistantHashingConsumer
                 channel = connection.CreateModel();
 
                 // make sure exchange existed
-                channel.ExchangeDeclare(exchange: AppConst.ConsistantHashingDemo.ExchangeName, "x-consistent-hash", true);
+                channel.ExchangeDeclare(exchange: AppConst.ConsistentHashingDemo.ExchangeName, "x-consistent-hash", true);
 
                 // create and bind queue to exchange
                 var queue = channel.QueueDeclare($"cons-hash-queue-{key}", true, false, false, null);
-                channel.QueueBind(queue.QueueName, AppConst.ConsistantHashingDemo.ExchangeName, "999");
+                channel.QueueBind(queue.QueueName, AppConst.ConsistentHashingDemo.ExchangeName, "999");
 
                 channel.BasicQos(0, 1, false);
                 connection.ConnectionShutdown += RabbitMQ_ConnectionShutdown;

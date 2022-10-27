@@ -13,7 +13,7 @@ namespace ShardShare
             public const string ExchangeName = "shard.images";
             //public const string RoutingKey = "r1234"; // no need this one
         }
-        public class ConsistantHashingDemo
+        public class ConsistentHashingDemo
         {
             public const string ExchangeName = "my.hashing.ex";
         }

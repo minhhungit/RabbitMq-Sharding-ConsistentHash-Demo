@@ -4,24 +4,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sharding", "Sharding", "{7032698E-C64B-409B-9D40-E49D6DE8532F}"
-	ProjectSection(SolutionItems) = preProject
-		Sharding\README.md = Sharding\README.md
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShardConsumer", "Sharding\ShardConsumer\ShardConsumer.csproj", "{D8DC13C6-8C83-435A-8745-A0C1E4F132E5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShardingProducer", "Sharding\ShardingProducer\ShardingProducer.csproj", "{31FFCE2A-F72B-4740-80FC-7532A2F7C604}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsistantHashing", "ConsistantHashing", "{2DC26FB9-0E0A-4076-8F21-A71AE0FCAF85}"
-	ProjectSection(SolutionItems) = preProject
-		ConsistantHashing\README.md = ConsistantHashing\README.md
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsistantHashingProducer", "ConsistantHashing\ConsistantHashingProducer\ConsistantHashingProducer.csproj", "{38311203-5B86-4C34-B16F-C25C96364C39}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsistantHashingConsumer", "ConsistantHashing\ConsistantHashingConsumer\ConsistantHashingConsumer.csproj", "{2C2F8410-6671-42D7-877D-5C9CAC49432F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsistentHashing", "ConsistentHashing", "{2DC26FB9-0E0A-4076-8F21-A71AE0FCAF85}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShardShare", "ShardShare\ShardShare.csproj", "{725D10FF-7102-4401-A64F-A2E55E9E81EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71EE0662-FB5D-460E-B216-237400447E8C}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsistentHashingConsumer", "ConsistentHashing\ConsistentHashingConsumer\ConsistentHashingConsumer.csproj", "{4B7D8A9F-188F-4B22-A6D0-B99B6F806A07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsistentHashingProducer", "ConsistentHashing\ConsistentHashingProducer\ConsistentHashingProducer.csproj", "{51EF7FF5-428F-4B90-84B6-C801CD0B8DAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,18 +36,18 @@ Global
 		{31FFCE2A-F72B-4740-80FC-7532A2F7C604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31FFCE2A-F72B-4740-80FC-7532A2F7C604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31FFCE2A-F72B-4740-80FC-7532A2F7C604}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38311203-5B86-4C34-B16F-C25C96364C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38311203-5B86-4C34-B16F-C25C96364C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38311203-5B86-4C34-B16F-C25C96364C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38311203-5B86-4C34-B16F-C25C96364C39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C2F8410-6671-42D7-877D-5C9CAC49432F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C2F8410-6671-42D7-877D-5C9CAC49432F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C2F8410-6671-42D7-877D-5C9CAC49432F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C2F8410-6671-42D7-877D-5C9CAC49432F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{725D10FF-7102-4401-A64F-A2E55E9E81EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{725D10FF-7102-4401-A64F-A2E55E9E81EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{725D10FF-7102-4401-A64F-A2E55E9E81EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{725D10FF-7102-4401-A64F-A2E55E9E81EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B7D8A9F-188F-4B22-A6D0-B99B6F806A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B7D8A9F-188F-4B22-A6D0-B99B6F806A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B7D8A9F-188F-4B22-A6D0-B99B6F806A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B7D8A9F-188F-4B22-A6D0-B99B6F806A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51EF7FF5-428F-4B90-84B6-C801CD0B8DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51EF7FF5-428F-4B90-84B6-C801CD0B8DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51EF7FF5-428F-4B90-84B6-C801CD0B8DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51EF7FF5-428F-4B90-84B6-C801CD0B8DAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,8 +55,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D8DC13C6-8C83-435A-8745-A0C1E4F132E5} = {7032698E-C64B-409B-9D40-E49D6DE8532F}
 		{31FFCE2A-F72B-4740-80FC-7532A2F7C604} = {7032698E-C64B-409B-9D40-E49D6DE8532F}
-		{38311203-5B86-4C34-B16F-C25C96364C39} = {2DC26FB9-0E0A-4076-8F21-A71AE0FCAF85}
-		{2C2F8410-6671-42D7-877D-5C9CAC49432F} = {2DC26FB9-0E0A-4076-8F21-A71AE0FCAF85}
+		{4B7D8A9F-188F-4B22-A6D0-B99B6F806A07} = {2DC26FB9-0E0A-4076-8F21-A71AE0FCAF85}
+		{51EF7FF5-428F-4B90-84B6-C801CD0B8DAA} = {2DC26FB9-0E0A-4076-8F21-A71AE0FCAF85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C85B92E1-333E-4915-8889-2500D6CD7E54}

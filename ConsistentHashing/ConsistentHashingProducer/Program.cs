@@ -3,7 +3,7 @@ using System.Text;
 using RabbitMQ.Client;
 using ShardShare;
 
-namespace ConsistantHashingProducer
+namespace ConsistentHashingProducer
 {
     // https://github.com/rabbitmq/rabbitmq-server/tree/main/deps/rabbitmq_consistent_hash_exchange
     // .\rabbitmq-plugins enable rabbitmq_consistent_hash_exchange
@@ -29,7 +29,7 @@ namespace ConsistantHashingProducer
                 channel = connection.CreateModel();
 
                 // create exchange
-                channel.ExchangeDeclare(exchange: AppConst.ConsistantHashingDemo.ExchangeName, "x-consistent-hash", true);
+                channel.ExchangeDeclare(exchange: AppConst.ConsistentHashingDemo.ExchangeName, "x-consistent-hash", true);
 
                 for (int i = 0; i < 10; i++)
                 {
@@ -43,7 +43,7 @@ namespace ConsistantHashingProducer
                     var body = Encoding.UTF8.GetBytes(json);
 
                     var routeKeyToHash = msg.CompanyId.ToString();
-                    channel.BasicPublish(AppConst.ConsistantHashingDemo.ExchangeName, routeKeyToHash, false, null, body);
+                    channel.BasicPublish(AppConst.ConsistentHashingDemo.ExchangeName, routeKeyToHash, false, null, body);
                 }
 
             }
